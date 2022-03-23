@@ -16,8 +16,6 @@ if (process.env.NODE_ENV === 'production') {
 	});
   }
 
-  
-
 
 const mailgun = () => 
 	mg({
