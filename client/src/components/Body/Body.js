@@ -2,6 +2,8 @@ import React from "react";
 import './Body.css'
 import axios from 'axios'
 import { useState } from "react";
+import Card from "../Cards/Card/Card";
+import Cards from "../Cards/Cards";
 
 
 const Body = () => {
@@ -77,7 +79,7 @@ const Body = () => {
         </div>
 
         <div id="projects">Projects</div>
-
+{/* 
         <div className="main">
           <ul className="cards">
             <li className="cards_item">
@@ -204,9 +206,9 @@ const Body = () => {
               </div>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
-
+<Cards />
 
 
       

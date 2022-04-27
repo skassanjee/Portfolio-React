@@ -19,14 +19,16 @@ const Form = () => {
         }
         try {
             setLoading(true)
-
             const { data } = await axios.post(`/api/email`, {
                 name,
                 email,
                 message
             });
             setLoading(false);
-            toast.success(data.message)
+            toast.success(data.message).then(
+                clear()
+            )
+            clear()
         } catch (err) {
             setLoading(false)
             toast.error(
@@ -35,6 +37,12 @@ const Form = () => {
                 : err.message
             )
         }
+    }
+
+    const clear = () => {
+        setEmail('')
+        setMessage('')
+        setName('')
     }
 	return ( 
         <div className="div-main" >
@@ -53,7 +61,7 @@ const Form = () => {
 
             <div>
                 <label htmlFor="email">Email</label>
-                <input type="email" onChange ={(e) => setEmail(e.target.value)}></input>
+                <input type="email" onChange={(e) => setEmail(e.target.value)}></input>
             </div>
 
             <div>
